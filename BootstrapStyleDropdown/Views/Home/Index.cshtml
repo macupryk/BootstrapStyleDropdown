@@ -1,0 +1,29 @@
+﻿@model BootstrapStyleDropdown.Models.DropdownViewModel
+@{
+    ViewBag.Title = "Bootstrap Style Dropdown";
+}
+
+<h2>@ViewBag.Title.</h2>
+
+<section>
+    <div class="well bs-component">
+        <br />
+
+        <div class="row">
+            <div class="col-xs-4 col-xs-push-0">
+                <div class="form-group">
+                    @Html.DropDownListFor(m => m.SelectedCountryId, this.ViewBag.CountryList as SelectList, new { id = "CountryList", @class = "selectCountry show-tick form-control" })
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts 
+{
+    @*Scripts*@
+    @Scripts.Render("~/bundles/bootstrap-select")
+
+    @*Styles*@
+    @Styles.Render("~/Content/Bootstrap-Select/css")
+}
